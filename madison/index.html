@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<!--
+    This is the root template for all views of the website.
+     It contains sections for style overrides, scripts, and content.
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="description"
+          content="Alex & Wendy &ndash; June 12, 2021 &ndash; Madison, WI &ndash; AWWedding.love">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Icons -->
+    <link rel="shortcut icon" type="image/png" href="/static/img/favicon-192.png">
+    <link rel="shortcut icon" sizes="192x192" href="/static/img/favicon-192.png">
+    <link rel="apple-touch-icon" href="/static/img/favicon-192.png">
+    <!-- / -->
+
+    <!-- Framework and application style -->
+    <link rel="stylesheet" href="/static/lib/css/bulma.min.css">
+    <link rel="stylesheet" href="/static/css/awwedding.css">
+    <!-- / -->
+
+    <!-- Icon and Google fonts. -->
+    <link rel="stylesheet" href="/static/lib/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bellota|Amatic+SC|Miss+Fajardose|Great+Vibes|Heebo:800&display=swap" rel="stylesheet">
+    <!-- / -->
+
+    <!-- Template styles -->
+    
+    <!-- / -->
+
+    <title>Madison, WI &mdash; Alex & Wendy's Wedding &ndash; June 12, 2021</title>
+
+    <!-- Template head -->
+    
+    <!-- / -->
+
+</head>
+<body>
+
+<!-- Template header -->
+
+    
+
+
+    <section class="section page-header" id="page-header">
+        <div class="container has-text-centered is-hidden-tablet">
+            <a href="/"
+               class="button is-small is-dark"
+               style="position: absolute; left: 0;">
+                <span class="icon is-small">
+                    
+                        <i class="fas fa-home"></i>
+                    
+                </span>
+            </a>
+            <h2 class="title">Madison, Wisconsin</h2>
+        </div>
+        <div class="container has-text-centered is-hidden-mobile">
+            <a href="/"
+               class="button is-medium is-dark"
+               style="position: absolute; left: 0; top: -0.25rem;">
+                <span class="icon is-medium">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span>
+                    
+                        Home
+                    
+                </span>
+            </a>
+            <h2 class="title is-size-1">Madison, Wisconsin</h2>
+        </div>
+        
+            <div class="spacer-small"></div>
+            <div class="container has-text-centered">
+                <img class="page-image"
+                     src="/static/img/flower/4.jpg" alt=""/>
+            </div>
+        
+    </section>
+
+
+<!-- / -->
+
+<!-- Template body -->
+
+    <section class="section">
+    <div class="container">
+        <p class="content">
+            Madison has been our home for the last decade. There's a ton of things in and around the city that
+            we love and would love to share with you. There's so much to discover about this wonderful city, and this
+            list of superlatives will help you relive some of the favorite experiences we've had here.
+        </p>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <h3 class="title">Favorite Activity</h3>
+        <h4 class="subtitle">Dane County Farmers' Market</h4>
+
+        <p class="content">
+            Every Saturday during Madison's beautiful summers, you can catch a farmer's market on capitol square. But
+            it's not just <em>a</em> farmer's market, it's <em>the</em>
+            <a target="_blank"
+               href="https://dcfm.org/markets/saturday-on-the-square"
+            >
+                Dane County Farmers' Market</a>.
+            This huge event is a Madison tradition, showcasing the produce of farmers right here in Dane County. It's a
+            great way to support the local community and walk away with some farm-fresh food. We've found many tasty
+            things here, and continue to go many times each year.
+        </p>
+        <div class="columns">
+            <div class="column">
+                <img alt=""
+                     src="/static/img/photo/madison/farmers1.jpg"
+                />
+            </div>
+            <div class="column">
+                <img alt=""
+                     src="/static/img/photo/madison/farmers2.jpg"
+                />
+            </div>
+            <div class="column  is-narrow has-text-centered">
+                <div style="width: 300px; margin-left: auto; margin-right: auto;" id="map-1"><button class="button is-primary" onclick="viewMap(1);">View Map</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h3 class="title">Favorite Winery</h3>
+        <h4 class="subtitle">Wollersheim Winery & Distillery</h4>
+        <p class="content">
+            Tucked away in hillside of the Wisconsin River near Sauk City, the
+            <a target="_blank" href="https://www.wollersheim.com/">Wollersheim Winery</a>
+            is only a short trip from Madison, and the trip is worth it. If you enjoy wine, you'll love to do a wine
+            tasting or winery tour here. They produce a wide variety of wines, and we have enjoyed every one that we've
+            tried. Their brand is also sold in grocery stores throughout Wisconsin. Keep an eye out for their famous
+            seasonal ice wine!
+        </p>
+        <div class="columns">
+            <div class="column">
+                <img alt=""
+                     src="/static/img/photo/madison/wollersheim.jpg"
+                />
+            </div>
+            <div class="column  is-narrow has-text-centered">
+                <div style="width: 300px; margin-left: auto; margin-right: auto;" id="map-2"><button class="button is-primary" onclick="viewMap(2);">View Map</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h3 class="title">Favorite Cheese Curds</h3>
+        <h4 class="subtitle">The Tin Fox</h4>
+        <p class="content">
+            What would a day in Wisconsin be without a helping of cheese curds? While my all-time favorite cheese curds
+            were made at the now-closed
+            <a target="_blank"
+               href="https://madison.com/wsj/entertainment/dining/restaurants/restaurant-news-bluephies-closing-after-years-new-concept-coming/article_d0cd65de-1c09-5057-8b09-f91990112902.html"
+            >
+                Bluephies</a>,
+            the curds at
+            <a target="_blank" href="https://thetinfoxrestaurant.com/">
+                The Tin Fox
+            </a>
+            have risen to take the crown as my current favorite.
+        </p>
+        <p class="content">
+            You'll notice the word "my" instead of "our" here &ndash; that's purposeful! Only one of us likes cheese,
+            we'll let you guess who.
+        </p>
+        <div class="columns">
+            <div class="column">
+                <img alt=""
+                     src="/static/img/photo/madison/tinfox.jpg"
+                />
+            </div>
+            <div class="column  is-narrow has-text-centered">
+                <div style="width: 300px; margin-left: auto; margin-right: auto;" id="map-3"><button class="button is-primary" onclick="viewMap(3);">View Map</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <h3 class="title">Favorite Fancy Restaurant</h3>
+        <h4 class="subtitle">Eno Vino</h4>
+
+        <p class="content">
+            With a stunning view of the Capitol, Eno Vino's view is second only to its food. Its modern menu has
+            something for everyone, and the presentation of the dishes is just as good as their taste. We've been here
+            many times, and plan to visit many more.
+        </p>
+        <div class="columns">
+            <div class="column">
+                <img alt=""
+                     src="/static/img/photo/madison/enovino.jpg"
+                />
+            </div>
+            <div class="column  is-narrow has-text-centered">
+                <div style="width: 300px; margin-left: auto; margin-right: auto;" id="map-4"><button class="button is-primary" onclick="viewMap(4);">View Map</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h3 class="title">Favorite Casual Restaurant</h3>
+        <h4 class="subtitle">Quivey's Grove</h4>
+
+        <p class="content">
+            Quivey's Grove represents a rich history in Wisconsin cuisine. The restaurant is built in a historic estate
+            filled with antiques and stories from Wisconsin's past. There's a fancier dinner section, and a more relaxed
+            bar and grill area, to fit any taste.
+        </p>
+        <div class="columns">
+            <div class="column">
+                <img alt=""
+                     src="/static/img/photo/madison/quiveys.jpg"
+                />
+            </div>
+            <div class="column  is-narrow has-text-centered">
+                <div style="width: 300px; margin-left: auto; margin-right: auto;" id="map-5"><button class="button is-primary" onclick="viewMap(5);">View Map</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h3 class="title">Favorite Cozy Spot</h3>
+        <h4 class="subtitle">Bascom Hill</h4>
+
+        <p class="content">
+            The iconic Bascom Hill of UW-Madison means a lot to both of us. We have so many fond memories of the campus,
+            and Bascom Hill is a landmark in the center of all of it. The perfect spot for unwinding on a sunny summer
+            day. At the top of the hill sits Bascom Hall, one of the more recognizable buildings on campus. Climbing
+            the hill will earn you a beautiful view down State Street, capturing the essence of downtown Madison.
+        </p>
+        <div class="columns">
+            <div class="column">
+                <img alt=""
+                     src="/static/img/photo/madison/bascom.jpg"
+                />
+            </div>
+            <div class="column  is-narrow has-text-centered">
+                <div style="width: 300px; margin-left: auto; margin-right: auto;" id="map-6"><button class="button is-primary" onclick="viewMap(6);">View Map</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h3 class="title">Favorite View</h3>
+        <h4 class="subtitle">Picnic Point</h4>
+
+        <p class="content">
+            Not far from the bustle of campus is the serene escape of Picnic Point. Following an easy trail from the
+            Lakeshore area leads to a cozy peninsula with an amazing view of campus. With its fire pits and benches,
+            this remains one of our favorite quick getaways in Madison.
+        </p>
+        <div class="columns">
+            <div class="column">
+                <img alt=""
+                     src="/static/img/photo/madison/picnicpoint.jpg"
+                />
+            </div>
+            <div class="column  is-narrow has-text-centered">
+                <div style="width: 300px; margin-left: auto; margin-right: auto;" id="map-7"><button class="button is-primary" onclick="viewMap(7);">View Map</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h3 class="title">Favorite Hike</h3>
+        <h4 class="subtitle">Devil's Lake</h4>
+
+        <p class="content">
+            Driving an hour north from Madison, you'll arrive at Devil's Lake State Park. This natural lake and its
+            surrounding terrain provide a challenging but fun athletic adventure. The fresh air out here raises the
+            spirits and allows an escape from city life. The hiking trail hosts many natural landmarks &ndash; most of
+            the rock formations have been present for thousands of years. To cool down, ice cream and boat rentals
+            round out a wonderful vacation destination.
+        </p>
+        <div class="columns">
+            <div class="column">
+                <img alt=""
+                     src="/static/img/photo/madison/devilslake.jpg"
+                />
+            </div>
+            <div class="column is-narrow has-text-centered">
+                <div style="width: 300px; margin-left: auto; margin-right: auto;" id="map-8"><button class="button is-primary" onclick="viewMap(8);">View Map</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h3 class="title">Favorite Building</h3>
+        <h4 class="subtitle">Wisconsin State Capitol</h4>
+
+        <p class="content">
+            There is so much beautiful architecture in Madison that it's hard to pick just one building to embody it.
+            But faced with the choice, it would have to be the State Capitol building. From the painted art on the
+            ceilings, to the informative historical exhibits, it's worth seeing in-person. Open to the public on most
+            days, the Capitol building is a monument to the successful governance of the great state of Wisconsin, and
+            an icon of this very special town.
+        </p>
+        <div class="columns">
+            <div class="column">
+                <img alt=""
+                     src="/static/img/photo/madison/capitol.jpg"
+                />
+            </div>
+            <div class="column is-narrow has-text-centered">
+                <div style="width: 300px; margin-left: auto; margin-right: auto;" id="map-9"><button class="button is-primary" onclick="viewMap(9);">View Map</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--
+TODO: Favorite bar??
+<section class="section">
+    <div class="container">
+        <h3 class="title">Favorite XYZ</h3>
+        <h4 class="subtitle">LOCATION</h4>
+
+        <p class="content">
+            DESCRIPTION
+        </p>
+        <div class="columns">
+            <div class="column">
+                <img alt=""
+                     src="wandos.jpg" />
+            </div>
+            <div class="column">
+                iframe map
+            </div>
+        </div>
+    </div>
+</section>
+-->
+
+<script type="text/javascript">
+    /* You like this? ;) */
+    function viewMap(mapId) {
+        mapDiv = document.querySelector("#map-" + mapId);
+        if (!mapDiv) {
+            return;
+        }
+        switch (mapId) {
+            case 1:
+                mapDiv.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2914.5345779792738!2d-89.38730998345797!3d43.07225537914553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880656a97df881e5%3A0x503974506f6ebae4!2sWisconsin%20State%20Capitol!5e0!3m2!1sen!2sus!4v1584847874173!5m2!1sen!2sus"' +
+                    '                        width="300" height="225" frameborder="0" style="border:0;" allowfullscreen=""' +
+                    '                        aria-hidden="false"' +
+                    '                        tabindex="0"></iframe>';
+                break;
+            case 2:
+                mapDiv.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11617.097666316144!2d-89.707406!3d43.2875746!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xedf7356d65dae91a!2sWollersheim%20Winery%20%26%20Distillery!5e0!3m2!1sen!2sus!4v1584846695518!5m2!1sen!2sus"' +
+                    '                        width="300" height="225" frameborder="0" style="border:0;" allowfullscreen=""' +
+                    '                        aria-hidden="false"' +
+                    '                        tabindex="0"' +
+                    '                ></iframe>';
+                break;
+            case 3:
+                mapDiv.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4122.775332615269!2d-89.43161134416974!3d43.057369278158!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf40bda6f369129c0!2sThe%20Tin%20Fox!5e0!3m2!1sen!2sus!4v1584846520000!5m2!1sen!2sus"' +
+                    '                        width="300" height="225" frameborder="0" style="border:0;" allowfullscreen=""' +
+                    '                        aria-hidden="false" tabindex="0"' +
+                    '                ></iframe>';
+                break;
+            case 4:
+                mapDiv.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2914.3283682838023!2d-89.38455324836839!3d43.07659139743823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88065340843c3723%3A0xf97053edfad61df7!2sEno%20Vino%20Downtown!5e0!3m2!1sen!2sus!4v1584850962252!5m2!1sen!2sus"' +
+                    '                        width="300" height="225" frameborder="0" style="border:0;" allowfullscreen=""' +
+                    '                        aria-hidden="false" tabindex="0"' +
+                    '                ></iframe>';
+                break;
+            case 5:
+                mapDiv.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11670.127147133066!2d-89.4792745!3d43.0091927!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5bfa162bbf788265!2sQuivey&#39;s%20Grove!5e0!3m2!1sen!2sus!4v1584851141633!5m2!1sen!2sus"' +
+                    '                        width="300" height="225" frameborder="0" style="border:0;" allowfullscreen=""' +
+                    '                        aria-hidden="false" tabindex="0"' +
+                    '                ></iframe>';
+                break;
+            case 6:
+                mapDiv.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4901.639127429253!2d-89.40818488376301!3d43.072308269406065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8807acca14541865%3A0xb59c6d1db2f37c95!2sBascom%20Hall!5e0!3m2!1sen!2sus!4v1584851271863!5m2!1sen!2sus"' +
+                    '                        width="300" height="225" frameborder="0" style="border:0;" allowfullscreen=""' +
+                    '                        aria-hidden="false" tabindex="0"' +
+                    '                ></iframe>';
+                break;
+            case 7:
+                mapDiv.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2913.703076921563!2d-89.41763844836818!3d43.089737396596966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8807aca23665ca87%3A0x55d6a55720dadea2!2sPicnic%20Point!5e0!3m2!1sen!2sus!4v1584851369602!5m2!1sen!2sus"' +
+                    '                        width="300" height="225" frameborder="0" style="border:0;" allowfullscreen=""' +
+                    '                        aria-hidden="false" tabindex="0"' +
+                    '                ></iframe>';
+                break;
+            case 8:
+                mapDiv.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11592.199865234219!2d-89.74079531009572!3d43.41778275050508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88076b70e8707b1f%3A0xdd69a4c886580ec0!2sDevils%20Lake!5e0!3m2!1sen!2sus!4v1584851781680!5m2!1sen!2sus"' +
+                    '                        width="300" height="225" frameborder="0" style="border:0;" allowfullscreen=""' +
+                    '                        aria-hidden="false" tabindex="0"' +
+                    '                ></iframe>';
+                break;
+            case 9:
+                mapDiv.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2914.4166606085255!2d-89.38623534836844!3d43.07473489755697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880656a97df881e5%3A0x503974506f6ebae4!2sWisconsin%20State%20Capitol!5e0!3m2!1sen!2sus!4v1584851817549!5m2!1sen!2sus"' +
+                    '                        width="300" height="225" frameborder="0" style="border:0;" allowfullscreen=""' +
+                    '                        aria-hidden="false" tabindex="0"' +
+                    '                ></iframe>';
+                break;
+        }
+    }
+</script>
+
+<!-- / -->
+
+<!-- Template footer -->
+
+    
+
+<section class="section navigator">
+    <div class="container">
+        
+    <div id="navbarContainer">
+        <nav class="level">
+            <p class="level-item has-text-centered" style="flex-basis: 1rem;">
+                <a href="/photos/"
+                   class=" button is-medium is-black is-fullwidth"
+                >Photos</a>
+            </p>
+            <p class="level-item has-text-centered" style="flex-basis: 1rem;">
+                <a href="/story/"
+                   class=" button is-medium is-black is-fullwidth"
+                >Our Story</a>
+            </p>
+            <p class="level-item has-text-centered" style="flex-basis: 1rem;">
+                <a href="/party/"
+                   class=" button is-medium is-black is-fullwidth"
+                >Wedding Party</a>
+            </p>
+
+        </nav>
+        <nav class="level">
+            <p class="level-item has-text-centered" style="flex-basis: 1rem;">
+                <a href="/loving/"
+                   class=" button is-medium is-black is-fullwidth"
+                >Loving Day</a>
+            </p>
+            <p class="level-item has-text-centered" style="flex-basis: 1rem;">
+                <a href="/madison/"
+                   class="has-text-danger button is-medium is-black is-fullwidth"
+                >Madison, WI</a>
+            </p>
+            <p class="level-item has-text-centered" style="flex-basis: 1rem;">
+                <a href="/fun/"
+                   class=" button is-medium is-black is-fullwidth"
+                >Fun &amp; Games</a>
+            </p>
+        </nav>
+    </div>
+
+    </div>
+</section>
+
+<!-- / -->
+
+<!-- Template scripts -->
+
+<!-- / -->
+
+</body>
+</html>

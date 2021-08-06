@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<!--
+    This is the root template for all views of the website.
+     It contains sections for style overrides, scripts, and content.
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="description"
+          content="Alex & Wendy &ndash; June 12, 2021 &ndash; Madison, WI &ndash; AWWedding.love">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Icons -->
+    <link rel="shortcut icon" type="image/png" href="/static/img/favicon-192.png">
+    <link rel="shortcut icon" sizes="192x192" href="/static/img/favicon-192.png">
+    <link rel="apple-touch-icon" href="/static/img/favicon-192.png">
+    <!-- / -->
+
+    <!-- Framework and application style -->
+    <link rel="stylesheet" href="/static/lib/css/bulma.min.css">
+    <link rel="stylesheet" href="/static/css/awwedding.css">
+    <!-- / -->
+
+    <!-- Icon and Google fonts. -->
+    <link rel="stylesheet" href="/static/lib/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bellota|Amatic+SC|Miss+Fajardose|Great+Vibes|Heebo:800&display=swap" rel="stylesheet">
+    <!-- / -->
+
+    <!-- Template styles -->
+    
+    <!-- / -->
+
+    <title>Owl the Pandamonium &mdash; Alex & Wendy's Wedding &ndash; June 12, 2021</title>
+
+    <!-- Template head -->
+    
+    <script src="/static/lib/js/phaser.min.js"></script>
+<style>
+    .nodisp {
+        display: none;
+    }
+</style>
+
+    <!-- / -->
+
+</head>
+<body>
+
+<!-- Template header -->
+
+    
+
+
+    <section class="section page-header" id="page-header">
+        <div class="container has-text-centered is-hidden-tablet">
+            <a href="/fun/"
+               class="button is-small is-dark"
+               style="position: absolute; left: 0;">
+                <span class="icon is-small">
+                    
+                        <i class="fas fa-chevron-left"></i>
+                    
+                </span>
+            </a>
+            <h2 class="title">Owl the Pandamonium</h2>
+        </div>
+        <div class="container has-text-centered is-hidden-mobile">
+            <a href="/fun/"
+               class="button is-medium is-dark"
+               style="position: absolute; left: 0; top: -0.25rem;">
+                <span class="icon is-medium">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span>
+                    
+                        Back
+                    
+                </span>
+            </a>
+            <h2 class="title is-size-1">Owl the Pandamonium</h2>
+        </div>
+        
+    </section>
+
+
+<!-- / -->
+
+<!-- Template body -->
+
+    <style type="text/css">
+    .hiscores td, .hiscores td > img {
+        vertical-align: middle;
+    }
+
+    .hiscores img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .hiscores tr {
+        line-height: 1rem;
+    }
+</style>
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column" id="controls">
+                <h4 class="subtitle">Controls</h4>
+                <p class="content">
+                    Use your <span class="is-hidden-touch">mouse</span><span class="is-hidden-desktop">finger</span>
+                    to move the bucket and catch the falling animals!
+                </p>
+                <div class="content">
+                    <ul>
+                        <li>Each animal you catch is worth a point.</li>
+                        <li>Each missed animal is a loss of a point.</li>
+                        <li>Catch three wrong animals and it's game over.</li>
+                        <li>Things get faster every 10 animals you catch.</li>
+                    </ul>
+                </div>
+                
+                <h4 class="subtitle">Score</h4>
+                <nav class="level is-mobile">
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Score</p>
+                            <p class="title game-score">&mdash;</p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Lives</p>
+                            <p class="title" id="game-lives">3</p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Speed</p>
+                            <p class="title"><span id="game-speed">1</span>x</p>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="column" id="game-menu">
+                <div id="postgame" class="nodisp has-text-centered">
+                    <h4 class="title has-text-danger">Game over!</h4>
+                    <p class="content">Your score was <strong class="game-score"></strong>.</p>
+                    <p class="content">Play again by choosing your team.</p>
+                    <div class="spacer-small"></div>
+                </div>
+
+                <h3 class="title">Choose your team!</h3>
+                <div class="columns">
+                    <div class="column has-text-centered">
+                        <a href="#" onclick="start('panda'); return false;">
+                            <figure class="image is-96x96"
+                                    style="margin-left: auto; margin-right: auto; margin-bottom: 0.5rem;">
+                                <img src="/static/game-catch/panda.png" alt="Pandas"/>
+                            </figure>
+                            <h2 class="title">Pandas</h2>
+                        </a>
+                    </div>
+                    <div class="column has-text-centered">
+                        <a href="#" onclick="start('owl'); return false;">
+                            <figure class="image is-96x96"
+                                    style="margin-left: auto; margin-right: auto; margin-bottom: 0.5rem;">
+                                <img src="/static/game-catch/owl.png" alt="Owls"/>
+                            </figure>
+                            <h2 class="title">Owls</h2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="column nodisp" id="game-container" style="height: 45rem; padding: 0; cursor: none;">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div style="display: none;">
+    <span id="game-asset-root">/static/game-catch/</span>
+</div>
+
+<script type="text/javascript">
+    var config = {
+        type: Phaser.AUTO,
+        scale: {
+            mode: Phaser.Scale.FIT,
+            parent: "game-container",
+            autoCenter: Phaser.Scale.CENTER_HORIZONTALLY,
+            width: 600,
+            height: 800
+        },
+        physics: {
+            default: 'arcade',
+            arcade: {
+                gravity: {y: 300},
+                /*debugBodyColor: 0xff00ff,
+                debug: true,*/
+                overlapBias: 256,
+            }
+        },
+        scene: {
+            preload: preload,
+            create: create,
+            update: update,
+        }
+    };
+
+    var game;
+    var t; // "this"
+    var bucket;
+    var isCursorLost;
+
+    var ballGroup;
+
+    var team;
+    var score;
+    var speed;
+    var lives;
+
+
+    function preload() {
+        this.load.setBaseURL(window.location.href.split('/').slice(0, 3).join("/") + document.getElementById("game-asset-root").innerText);
+
+        this.load.image("sky", "sky.png");
+        this.load.image("bucket", "bucket.png");
+        this.load.image("owl", "owl.png");
+        this.load.image("panda", "panda.png");
+    }
+
+    function create() {
+        t = this;
+
+        this.add.image(300, 400, 'sky');
+        bucket = this.physics.add.staticImage(300, 700, 'bucket');
+
+        ballGroup = this.physics.add.group();
+
+
+        this.physics.add.collider(
+            ballGroup,
+            undefined,
+            function (a, b) {
+                //a.body.setVelocityY(Math.random());
+                //b.body.setVelocityY(Math.random() * -1);
+
+            });
+
+        this.physics.add.collider(
+            ballGroup,
+            bucket,
+            function (animal, bucket) {
+                if (animal.texture.key === "bucket") {
+                    // colliders are swapped
+                    var tmp = animal;
+                    animal = bucket;
+                    bucket = tmp;
+                }
+
+                //if (animal.textureKey !== "panda" && animal.textureKey !== "owl") {
+                //  return;
+                //}
+                if (Math.abs(animal.x - bucket.x) < 48 && animal.y < 650) {
+
+
+                    if (animal.texture.key !== team) {
+                        __decrementLife();
+                    } else {
+                        __incrementScore();
+                    }
+
+                    animal.destroy();
+                }
+
+                if (animal.y >= 650) {
+                    // into the pit
+                    animal.setVelocityY(1000);
+                }
+            }
+        );
+
+        /* var particles = this.add.particles('red');
+
+         var emitter = particles.createEmitter({
+             speed: 100,
+             scale: {start: 1, end: 0},
+             blendMode: 'ADD'
+         });
+
+         var logo = this.physics.add.image(400, 100, 'logo');
+
+         //logo.setVelocity(100, 200);
+ //        logo.setBounce(1, 1);
+ //        logo.setCollideWorldBounds(true);
+
+   //      emitter.startFollow(logo);*/
+
+
+        this.input.on("pointermove", function (ptr) {
+            _bucketUpdatePosition(ptr.x);
+        });
+
+        this.input.on("gameout", function () {
+            isCursorLost = true;
+        });
+
+        this.input.on("gameover", function () {
+            isCursorLost = false;
+        })
+    }
+
+    function update() {
+        __snapBucket();
+        __spawnAnimals();
+        __cullAnimals();
+        t.physics.collide(ballGroup, ballGroup);
+    }
+
+    function _bucketUpdatePosition(x) {
+        if (x < 48) {
+            x = 48;
+        } else if (x > 552) {
+            x = 552;
+        }
+
+        var curPos = bucket.x;
+        var delta = x - curPos;
+        var setTo = curPos + (delta / 3);
+
+        if (Math.abs(delta / 3) < 16) {
+            setTo = x;
+        }
+
+
+        bucket.setPosition(setTo, 700);
+        bucket.refreshBody();
+    }
+
+    function __snapBucket() {
+
+        if (isCursorLost) {
+            x = bucket.x;
+            if (x < 300) {
+                _bucketUpdatePosition(0);
+            } else {
+                _bucketUpdatePosition(600);
+            }
+        }
+    }
+
+    function __spawnAnimals() {
+        if (Math.random() > 0.075) {
+            return;
+        }
+
+        posX = Math.random() * 800;
+
+        // check for existing in that location before placing
+        var within = t.physics.overlapRect(posX - 64, -296, 112, -200);
+        if (within.length > 0) {
+            return;
+        }
+
+        animal = t.physics.add.sprite(Math.random() * 800, -248, Math.random() > 0.5 ? "panda" : "owl");
+        ballGroup.add(animal);
+        animal.allowRotation = true;
+
+        animal.body.angularVelocity = (Math.random() - 0.5) * 256;
+        animal.body.setVelocityX((Math.random() - 0.5) * 256);
+        animal.body.bounce.x = 0.75;
+        animal.body.bounce.y = 0.75;
+        //animal.body.setBoundsRectangle(new Phaser.Geom.Rectangle(0, 0, 20, 20));
+        animal.body.setCircle(32);
+        animal.body.setOffset(16, 16);
+        //animal.bod.set
+    }
+
+    function __cullAnimals() {
+
+        ballGroup.getChildren().forEach(function (animal) {
+            // If animal is out of bounds, die and subtract score for team's animal
+            if (animal.y > 848) {
+                if (animal.texture.key === team && animal.x > 48 && animal.x < 552) {
+                    __decrementScore();
+                }
+
+                animal.destroy();
+            }
+
+            // If animal is too slow before becoming visible, die (might be stuck on another animal)
+            if (animal.y > -100 && animal.y < 300) {
+                if (animal.body.velocity.y < 200) {
+                    animal.destroy();
+                }
+            }
+        });
+    }
+
+    function __updateDOMwithGameState() {
+        document.querySelector("#game-speed").innerHTML = speed;
+        document.querySelectorAll(".game-score").forEach(function (el) {
+            el.innerHTML = score;
+        });
+        document.querySelector("#game-lives").innerHTML = lives;
+    }
+
+    function __incrementScore() {
+        __setScore(score + 1);
+        __updateSpeed();
+    }
+
+    function __decrementScore() {
+        if (score < 1) {
+            return;
+        }
+        __setScore(score - 1);
+        __updateSpeed();
+    }
+
+    function __setScore(s) {
+        score = s;
+        __updateDOMwithGameState();
+    }
+
+    function __updateSpeed() {
+        speed = Math.ceil(score / 10);
+
+        t.physics.world.gravity.y = 200 + (100 * speed);
+        __updateDOMwithGameState();
+    }
+
+    function __decrementLife() {
+        lives--;
+
+        if (lives === 0) {
+            reset();
+        }
+        __updateDOMwithGameState();
+    }
+
+
+    function reset() {
+        document.querySelector("#game-menu").classList.remove("nodisp");
+        document.querySelector("#game-container").classList.add("nodisp");
+
+        document.querySelector("#page-header").classList.remove("nodisp");
+        document.querySelector("#postgame").classList.remove("nodisp");
+
+        game.destroy(true);
+    }
+
+    function start(tm) {
+        document.querySelector("#game-menu").classList.add("nodisp");
+        document.querySelector("#game-container").classList.remove("nodisp");
+
+        team = tm;
+
+        score = 0;
+        speed = 1;
+        lives = 3;
+
+        game = new Phaser.Game(config);
+        __updateDOMwithGameState();
+
+        document.querySelector("#page-header").classList.add("nodisp");
+        document.querySelector("#postgame").classList.add("nodisp");
+        document.querySelector("#game-container > canvas").scrollIntoView(false);
+
+    }
+
+
+</script>
+
+<!-- / -->
+
+<!-- Template footer -->
+
+    
+
+<!-- / -->
+
+<!-- Template scripts -->
+
+<!-- / -->
+
+</body>
+</html>
