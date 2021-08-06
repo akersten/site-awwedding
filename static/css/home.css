@@ -1,0 +1,6 @@
+/* Override the background color for non-mobile widths, so the bounding black boxes on each side stand out. */
+@media (min-width: 769px) {
+    html {
+        background-color: #FFFFFF;
+    }
+}
